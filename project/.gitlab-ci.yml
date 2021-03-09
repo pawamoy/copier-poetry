@@ -79,8 +79,7 @@ pages:
   script:
     - poetry run duty test
     - poetry run duty coverage
-    - poetry run duty check-docs
-    - mkdocs build -s --site-dir public
+    - poetry run duty docs-deploy-gitlab
   artifacts:
     paths:
     - public
