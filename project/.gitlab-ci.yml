@@ -28,7 +28,10 @@ stages:
 
 check-docs:
   <<: *quality
-  script: poetry run duty check-docs
+  script:
+    - poetry run duty test
+    - poetry run duty coverage
+    - poetry run duty check-docs
 
 check-code-quality:
   <<: *quality
@@ -75,7 +78,8 @@ pages:
     - poetry install -vv
   script:
     - poetry run duty test
-    - poetry run coverage
+    - poetry run duty coverage
+    - poetry run duty check-docs
     - mkdocs build -s --site-dir public
   artifacts:
     paths:
