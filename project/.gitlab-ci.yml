@@ -29,8 +29,8 @@ stages:
 check-docs:
   <<: *quality
   script:
-    - poetry run duty test
-    - poetry run duty coverage
+    - mkdir -p build/coverage 
+    - touch build/coverage/index.html 
     - poetry run duty check-docs
 
 check-code-quality:
@@ -63,6 +63,12 @@ python3.7:
 python3.8:
   <<: *test
   image: python:3.8
+  script:
+    - poetry run duty coverage
+  coverage: '^TOTAL.+?(\d+\.\d+\%)$'
+  artifacts:
+    paths:
+    - build/coverage
 
 python3.9:
   <<: *test
@@ -71,15 +77,13 @@ python3.9:
 
 pages:
   stage: deploy
-  image: python:3.6
+  image: python:3.8
   before_script:
     - pip install poetry
     - poetry --version
     - poetry install -vv
   script:
-    - poetry run duty test
-    - poetry run duty coverage
-    - poetry run duty docs-deploy-gitlab
+    - poetry run duty docs
   artifacts:
     paths:
     - public
