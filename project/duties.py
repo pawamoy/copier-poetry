@@ -20,17 +20,6 @@ WINDOWS = os.name == "nt"
 PTY = not WINDOWS and not CI
 
 
-# Detect which CI were using so we can adjust things as needed for mkdocs from site to public for Gitlab Pages
-# https://docs.gitlab.com/ee/ci/variables/predefined_variables.html
-# Available for all jobs executed in CI/CD. true when available.
-GITLAB_CI = os.environ.get("GITLAB_CI")
-
-# https://docs.github.com/en/actions/reference/environment-variables Always set to true when GitHub Actions is
-# running the workflow. You can use this variable to differentiate when tests are being run locally or by GitHub
-# Actions.
-GITHUB_CI = os.environ.get("GITHUB_ACTIONS")
-
-
 def latest(lines: List[str], regex: Pattern) -> Optional[str]:
     """
     Return the last released version.
@@ -323,10 +312,8 @@ def release(ctx, version):
         ctx.run("git push --tags", title="Pushing tags", pty=False)
         ctx.run("poetry build", title="Building dist/wheel", pty=PTY)
         ctx.run("poetry publish", title="Publishing version", pty=PTY)
-        if GITHUB_CI:
-            ctx.run("mkdocs gh-deploy", title="Deploying documentation", pty=PTY)
-        elif GITLAB_CI:
-            ctx.run("mkdocs build -s --site-dir public", title="Deploying documentation")
+        # building docs with the site_dir specified ensures the proper path 'site' or 'public' is used
+        docs.run()
 
 
 @duty(silent=True)
