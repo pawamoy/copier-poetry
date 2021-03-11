@@ -312,8 +312,8 @@ def release(ctx, version):
         ctx.run("git push --tags", title="Pushing tags", pty=False)
         ctx.run("poetry build", title="Building dist/wheel", pty=PTY)
         ctx.run("poetry publish", title="Publishing version", pty=PTY)
-        # building docs with the site_dir specified ensures the proper path 'site' or 'public' is used
-        docs.run()
+        # building docs with the site_dir specified in mkdocs.yml ensures the proper path 'site' or 'public' is used and this will work
+        ctx.run("mkdocs build", title="Deploying documentation")
 
 
 @duty(silent=True)
