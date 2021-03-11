@@ -64,11 +64,12 @@ python3.8:
   <<: *test
   image: python:3.8
   script:
+    - poetry run duty test
     - poetry run duty coverage
-  coverage: '^TOTAL.+?(\d+\.\d+\%)$'
+  coverage: '/^TOTAL.+?(\d+\.\d+\%)$/'
   artifacts:
     paths:
-    - build/coverage
+    - build/
 
 python3.9:
   <<: *test
@@ -77,13 +78,10 @@ python3.9:
 
 pages:
   stage: deploy
+  <<: *test
   image: python:3.8
-  before_script:
-    - pip install poetry
-    - poetry --version
-    - poetry install -vv
   script:
-    - poetry run duty docs
+   - poetry run duty docs
   artifacts:
     paths:
     - public
