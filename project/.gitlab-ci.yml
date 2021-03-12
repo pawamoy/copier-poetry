@@ -28,10 +28,7 @@ stages:
 
 check-docs:
   <<: *quality
-  script:
-  - mkdir -p build/coverage 
-  - touch build/coverage/index.html 
-  - poetry run duty check-docs
+  script: poetry run duty check-docs
 
 check-code-quality:
   <<: *quality
