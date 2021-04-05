@@ -1,9 +1,13 @@
 # Copier Poetry
 
-Copier template for Poetry projects.
+Copier template for Python projects managed by Poetry.
 
 This copier template is mainly for my own usage,
 but feel free to try it out, or fork it!
+
+Also checkout [copier-pdm](https://github.com/pawamoy/copier-pdm),
+which is the same template
+but with [PDM](https://github.com/pdm-project/pdm) instead of Poetry.
 
 ## Features
 
@@ -18,7 +22,8 @@ but feel free to try it out, or fork it!
     - [isort](https://github.com/timothycrosley/isort),
     - [mypy](https://github.com/python/mypy),
     - [safety](https://github.com/pyupio/safety)
-- Tests run with [pytest](https://github.com/pytest-dev/pytest) and plugins, with [coverage](https://github.com/nedbat/coveragepy) support
+- Tests run with [pytest](https://github.com/pytest-dev/pytest) and plugins,
+  with [coverage](https://github.com/nedbat/coveragepy) support
 - Cross-platform tasks with [duty](https://github.com/pawamoy/duty)
 - Support for GitHub workflow and Gitlab CI
 - Python 3.6 or above
