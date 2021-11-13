@@ -68,6 +68,9 @@ python3.9:
   <<: *test
   image: python:3.9
 
+python3.10:
+  <<: *test
+  image: python:3.10
 
 pages:
   stage: deploy
@@ -78,6 +81,7 @@ pages:
   - python3.7
   - python3.8
   - python3.9
+  - python:3.10
   script:
   - poetry run duty coverage
   - poetry run duty docs
