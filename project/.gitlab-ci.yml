@@ -70,7 +70,7 @@ python3.9:
 
 python3.10:
   <<: *test
-  image: python:3.10
+  image: python:3.10.0
 
 pages:
   stage: deploy
