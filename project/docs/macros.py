@@ -31,9 +31,9 @@ def get_credits_data() -> dict:
     dependencies = direct_dependencies | indirect_dependencies
 
     packages = {}
-    for pkg in search_packages_info(dependencies):
-        pkg = {_: pkg[_] for _ in ("name", "home-page")}
-        packages[pkg["name"].lower()] = pkg
+    for pkg in search_packages_info(list(dependencies)):
+        pkg = {_: pkg[_] for _ in ("name", "home-page")}  # type: ignore
+        packages[pkg["name"].lower()] = pkg  # type: ignore
 
     # all packages might not be credited,
     # like the ones that are now part of the standard library
