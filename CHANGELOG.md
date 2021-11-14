@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.3.2](https://github.com/pawamoy/copier-poetry/releases/tag/0.3.2) - 2021-11-14
+
+<small>[Compare with 0.3.1](https://github.com/pawamoy/copier-poetry/compare/0.3.1...0.3.2)</small>
+
+- Add Python 3.10 to CI configuration.
+- Warn when `safety` is not available in `check-dependencies` task.
+- Upgrade some dependencies.
+- Fix typing (mypy) warnings.
+
+
 ## [0.3.1](https://github.com/pawamoy/copier-poetry/releases/tag/0.3.1) - 2021-03-14
 
 <small>[Compare with 0.3.0](https://github.com/pawamoy/copier-poetry/compare/0.3.0...0.3.1)</small>
