@@ -1,5 +1,6 @@
 """Development tasks."""
 
+import inspect
 import os
 import re
 import sys
@@ -179,8 +180,26 @@ def check_dependencies(ctx):
         if pipx:
             safety = f"{pipx} run safety"
         else:
-            safety = "safety"
-            nofail = True
+            def safety_not_available():
+                print(
+                    inspect.cleandoc(
+                        """
+                        Please install safety or pipx to run this task:
+
+                        pip install --user safety
+                        # or
+                        pip install --user pipx
+                        # and potentially
+                        pipx install safety
+
+                        See https://github.com/advisories/GHSA-7q25-qrjw-6fg2
+                        """
+                    )
+                )
+                return 1
+
+            ctx.run(safety_not_available, title="Checking dependencies", nofail=True)
+            return
     ctx.run(
         f"poetry export -f requirements.txt --without-hashes | {safety} check --stdin --full-report",
         title="Checking dependencies",
