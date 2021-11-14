@@ -180,9 +180,10 @@ def check_dependencies(ctx):
         if pipx:
             safety = f"{pipx} run safety"
         else:
-            def safety_not_available():
+
+            def safety_not_available():  # noqa: WPS430
                 print(
-                    inspect.cleandoc(
+                    inspect.cleandoc(  # noqa: WPS462
                         """
                         Please install safety or pipx to run this task:
 
@@ -194,7 +195,7 @@ def check_dependencies(ctx):
 
                         See https://github.com/advisories/GHSA-7q25-qrjw-6fg2
                         """
-                    )
+                    )  # noqa: WPS355
                 )
                 return 1
 
