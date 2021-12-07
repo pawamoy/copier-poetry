@@ -235,10 +235,9 @@ run `make check-types`.
 ### check-code-quality
 
 The code quality analysis is done
-with [Flakehell](https://github.com/life4/flakehell),
-a wrapper around [Flake8](https://flake8.pycqa.org/en/latest/),
+with [Flake8](https://flake8.pycqa.org/en/latest/),
 and a battery of Flake8 plugins.
-The analysis is configured in `pyproject.toml`, section `[tool.flakehell]`.
+The analysis is configured in `config/flake8.ini`.
 In this file, you can deactivate rules
 or activate others to customize your analysis.
 Rules identifiers always start with one or more capital letters,
@@ -297,16 +296,19 @@ markdown_docstring = """
 ```
 
 You can disable a warning globally by adding its ID
-into the list in `pyproject.toml`, section `[tool.flakehell.plugins]`.
+into the list in `config/flake8.ini`.
 
 You can also disable warnings per file, like so:
 
-```toml
-# in pyproject.toml
-[tool.flakehell.exceptions."src/your_package/your_module.py"]
-"*" = [
-    "-WPS407",  # mutable constant
-]
+```ini
+; in config/flake8.ini
+per-file-ignores =
+    ; module imported but unused
+    src/your_package/__init__.py:F401
+    ; continuation line under-indented for hanging indent
+    setup.py:E121
+    ; mutable constant
+    src/your_package/your_module.py:WPS407
 ```
 
 ### check-dependencies
