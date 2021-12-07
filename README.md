@@ -17,8 +17,7 @@ but with [PDM](https://github.com/pdm-project/pdm) instead of Poetry.
   and "autodoc" [mkdocstrings plugin](https://github.com/pawamoy/mkdocstrings))
 - Pre-configured tools for code formatting, quality analysis and testing:
     - [black](https://github.com/psf/black),
-    - [flakehell](https://github.com/life4/flakehell)
-      ([flake8](https://gitlab.com/pycqa/flake8) wrapper) and plugins,
+    - [flake8](https://gitlab.com/pycqa/flake8) and plugins,
     - [isort](https://github.com/timothycrosley/isort),
     - [mypy](https://github.com/python/mypy),
     - [safety](https://github.com/pyupio/safety)
