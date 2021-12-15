@@ -1,9 +1,12 @@
 # Copier Poetry
 
-Copier template for Python projects managed by Poetry.
+[Copier](https://github.com/copier-org/copier) template
+for Python projects managed by [Poetry](https://github.com/python-poetry/poetry).
 
-This copier template is mainly for my own usage,
-but feel free to try it out, or fork it!
+:warning: I personally don't use this template anymore,
+so it is maintained by the community. I will still review and merge PRs though.
+I can add you as a contributor if you wish to maintain the template
+for the community (for personal needs, please fork instead).
 
 Also checkout [copier-pdm](https://github.com/pawamoy/copier-pdm),
 which is the same template
