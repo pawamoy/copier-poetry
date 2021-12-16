@@ -1,4 +1,3 @@
----
 site_name: Copier Poetry
 site_description: Copier template for Poetry projects.
 site_url: https://pawamoy.github.io/copier-poetry
@@ -6,37 +5,37 @@ repo_url: https://github.com/pawamoy/copier-poetry
 repo_name: pawamoy/copier-poetry
 
 nav:
-    - Home:
-          - Overview: index.md
-          - Contributing: contributing.md
-          - Code of Conduct: code_of_conduct.md
-          - Changelog: changelog.md
-          - License: license.md
-    - Usage:
-          - Requirements: requirements.md
-          - Generating a project: generate.md
-          - Working on a project: work.md
-          - Updating a project: update.md
-    - Author's website: https://pawamoy.github.io/
+- Home:
+  - Overview: index.md
+  - Contributing: contributing.md
+  - Code of Conduct: code_of_conduct.md
+  - Changelog: changelog.md
+  - License: license.md
+- Usage:
+  - Requirements: requirements.md
+  - Generating a project: generate.md
+  - Working on a project: work.md
+  - Updating a project: update.md
+- Author's website: https://pawamoy.github.io/
 
 theme:
-    name: material
-    palette:
-        scheme: slate
-        primary: teal
-        accent: purple
-    features:
-        - navigation.instant
-        - navigation.tabs
+  name: material
+  palette:
+    scheme: slate
+    primary: teal
+    accent: purple
+  features:
+  - navigation.instant
+  - navigation.tabs
 
 markdown_extensions:
-    - admonition
-    - pymdownx.emoji
-    - pymdownx.magiclink
-    - pymdownx.snippets:
-          check_paths: true
-    - pymdownx.superfences
-    - pymdownx.tabbed
-    - pymdownx.tasklist
-    - toc:
-          permalink: ¤
+- admonition
+- pymdownx.emoji
+- pymdownx.magiclink
+- pymdownx.snippets:
+    check_paths: true
+- pymdownx.superfences
+- pymdownx.tabbed
+- pymdownx.tasklist
+- toc:
+    permalink: ¤
