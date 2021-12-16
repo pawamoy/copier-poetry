@@ -1,32 +1,30 @@
----
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
-    - repo: https://github.com/pre-commit/pre-commit-hooks
-      rev: v3.2.0
-      hooks:
-          - id: check-added-large-files
-          - id: check-toml
-          - id: check-yaml
-          - id: end-of-file-fixer
-          - id: trailing-whitespace
-    - repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
-      rev: 0.1.0  # or specific tag
-      hooks:
-          - id: yamlfmt
-    - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
-      rev: v2.2.0
-      hooks:
-          - id: pretty-format-toml
-            args: [--autofix]
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v3.2.0
+  hooks:
+  - id: check-added-large-files
+  - id: check-toml
+  - id: check-yaml
+  - id: end-of-file-fixer
+  - id: trailing-whitespace
+- repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+  rev: v2.2.0
+  hooks:
+  - id: pretty-format-toml
+    args: [--autofix]
+  - id: pretty-format-yaml
+    args: [--autofix]
+    exclude: .copier-answer.yml
     # based on
     # https://gitlab.com/smop/pre-commit-hooks/-/blob/master/.pre-commit-hooks.yaml
-    - repo: local
-      hooks:
-          - id: check-poetry
-            name: Poetry check
-            description: Validates the structure of the pyproject.toml file
-            entry: poetry check
-            language: system
-            pass_filenames: false
-            files: pyproject.toml
+- repo: local
+  hooks:
+  - id: check-poetry
+    name: Poetry check
+    description: Validates the structure of the pyproject.toml file
+    entry: poetry check
+    language: system
+    pass_filenames: false
+    files: pyproject.toml
