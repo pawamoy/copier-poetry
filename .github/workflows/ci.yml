@@ -1,71 +1,72 @@
+---
 name: ci
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+    push:
+        branches:
+            - master
+    pull_request:
+        branches:
+            - master
 
 defaults:
-  run:
-    shell: bash
+    run:
+        shell: bash
 
 env:
-  LANG: "en_US.utf-8"
-  LC_ALL: "en_US.utf-8"
-  POETRY_VIRTUALENVS_IN_PROJECT: "true"
-  PYTHONIOENCODING: "UTF-8"
-  PYTHON_VERSIONS: ""
+    LANG: en_US.utf-8
+    LC_ALL: en_US.utf-8
+    POETRY_VIRTUALENVS_IN_PROJECT: 'true'
+    PYTHONIOENCODING: UTF-8
+    PYTHON_VERSIONS: ''
 
 jobs:
 
-  tests:
+    tests:
 
-    strategy:
-      max-parallel: 6
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-        python-version: [3.6,3.7,3.8,3.9]
-        exclude:
-          - os: windows-latest
-            python-version: 3.6
-          - os: windows-latest
-            python-version: 3.7
+        strategy:
+            max-parallel: 6
+            matrix:
+                os: [ubuntu-latest, windows-latest, macos-latest]
+                python-version: [3.6, 3.7, 3.8, 3.9]
+                exclude:
+                    - os: windows-latest
+                      python-version: 3.6
+                    - os: windows-latest
+                      python-version: 3.7
 
-    runs-on: ${{ matrix.os }}
-    continue-on-error: ${{ matrix.os != 'ubuntu-latest' }}
+        runs-on: ${{ matrix.os }}
+        continue-on-error: ${{ matrix.os != 'ubuntu-latest' }}
 
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
 
-    - name: Set up git
-      run: |
-        git config --global user.email "pawamoy@pm.me"
-        git config --global user.name "Timothée Mazzucotelli"
+            - name: Set up git
+              run: |
+                  git config --global user.email "pawamoy@pm.me"
+                  git config --global user.name "Timothée Mazzucotelli"
 
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
+            - name: Set up Python ${{ matrix.python-version }}
+              uses: actions/setup-python@v2
+              with:
+                  python-version: ${{ matrix.python-version }}
 
-    - name: Set up the cache
-      uses: actions/cache@v1
-      env:
-        cache-name: cache-python-packages
-      with:
-        path: tests/tmp/.venv
-        key: ${{ matrix.os }}-${{ matrix.python-version }}-${{ env.cache-name }}
-        restore-keys: |
-          ${{ matrix.os }}-${{ matrix.python-version }}-
-          ${{ matrix.os }}-
+            - name: Set up the cache
+              uses: actions/cache@v1
+              env:
+                  cache-name: cache-python-packages
+              with:
+                  path: tests/tmp/.venv
+                  key: ${{ matrix.os }}-${{ matrix.python-version }}-${{ env.cache-name }}
+                  restore-keys: |
+                      ${{ matrix.os }}-${{ matrix.python-version }}-
+                      ${{ matrix.os }}-
 
-    - name: Set up the project
-      run: |
-        pip install poetry safety copier
-        poetry config virtualenvs.in-project true
+            - name: Set up the project
+              run: |
+                  pip install poetry safety copier
+                  poetry config virtualenvs.in-project true
 
-    - name: Run the test suite
-      run: make test
+            - name: Run the test suite
+              run: make test
