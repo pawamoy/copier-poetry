@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "copier-poetry"
+version = "0.3.2"
+description = "Copier template for Python projects managed by Poetry."
+authors = ["Timothee Mazzucotelli <pawamoy@pm.me>"]
+license = "ISC License"
+
+[tool.poetry.dependencies]
+python = "3.7"
+pre-commit = "^2.16.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
