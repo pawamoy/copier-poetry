@@ -72,5 +72,5 @@ jobs:
 
     - name: Run pre commit
       run: |
-        poetry install
-        poetry run pre-commit run --all-files
+        pip install pre-commit
+        pre-commit run --all-files
