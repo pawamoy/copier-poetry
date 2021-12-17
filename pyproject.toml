@@ -10,7 +10,7 @@ authors = ["Timothee Mazzucotelli <pawamoy@pm.me>"]
 license = "ISC License"
 
 [tool.poetry.dependencies]
-python = "3.7"
+python = ">3.6"
 pre-commit = "^2.16.0"
 
 [tool.poetry.dev-dependencies]
