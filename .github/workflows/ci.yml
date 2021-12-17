@@ -71,4 +71,6 @@ jobs:
       run: make test
 
     - name: Run pre commit
-      run: poetry run pre-commit run --all-files
+      run: |
+        poetry install
+        poetry run pre-commit run --all-files
