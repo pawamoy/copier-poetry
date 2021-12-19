@@ -4,7 +4,6 @@ import functools
 from itertools import chain
 from pathlib import Path
 
-import httpx
 import toml
 from jinja2 import StrictUndefined
 from jinja2.sandbox import SandboxedEnvironment
@@ -36,7 +35,7 @@ def get_credits_data() -> dict:
     all_pkgs.update(indirect_dependencies)
     for pkg in search_packages_info(list(all_pkgs)):
         # NOTE walrus can be used
-        name = getattr(pkg, "name")
+        name = pkg.name
         if name:
             packages[name.lower()] = {key: getattr(pkg, key) for key in dir(pkg) if not key.startswith("_")}
 
