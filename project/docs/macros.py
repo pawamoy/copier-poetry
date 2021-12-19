@@ -78,7 +78,4 @@ def define_env(env):
     Arguments:
         env: An object used to add macros and filters to the environment.
     """
-
-    @env.macro  # noqa: WPS430 (nested function)
-    def credits():  # noqa: WPS430
-        return get_credits()
+    env.variables.update(get_credits())
