@@ -1,12 +1,9 @@
 """Macros and filters made available in Markdown pages."""
 
-import functools
 from itertools import chain
 from pathlib import Path
 
 import toml
-from jinja2 import StrictUndefined
-from jinja2.sandbox import SandboxedEnvironment
 from pip._internal.commands.show import search_packages_info  # noqa: WPS436 (no other way?)
 
 
@@ -52,20 +49,6 @@ def get_credits_data() -> dict:
         "indirect_dependencies": sorted(indirect_dependencies),
         "package_info": packages,
     }
-
-
-@functools.lru_cache(maxsize=None)
-def get_credits():
-    """
-    Return credits as Markdown.
-
-    Returns:
-        The credits page Markdown.
-    """
-    jinja_env = SandboxedEnvironment(undefined=StrictUndefined)
-    template_data = get_credits_data()
-    template_text = (Path(__file__).parent / "credits.jinja").read_text()
-    return jinja_env.from_string(template_text).render(**template_data)
 
 
 def define_env(env):
