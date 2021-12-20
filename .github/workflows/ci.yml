@@ -3,21 +3,21 @@ name: ci
 on:
   push:
     branches:
-      - master
+    - master
   pull_request:
     branches:
-      - master
+    - master
 
 defaults:
   run:
     shell: bash
 
 env:
-  LANG: "en_US.utf-8"
-  LC_ALL: "en_US.utf-8"
-  POETRY_VIRTUALENVS_IN_PROJECT: "true"
-  PYTHONIOENCODING: "UTF-8"
-  PYTHON_VERSIONS: ""
+  LANG: en_US.utf-8
+  LC_ALL: en_US.utf-8
+  POETRY_VIRTUALENVS_IN_PROJECT: 'true'
+  PYTHONIOENCODING: UTF-8
+  PYTHON_VERSIONS: ''
 
 jobs:
 
@@ -27,12 +27,12 @@ jobs:
       max-parallel: 6
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        python-version: [3.6,3.7,3.8,3.9]
+        python-version: [3.6, 3.7, 3.8, 3.9]
         exclude:
-          - os: windows-latest
-            python-version: 3.6
-          - os: windows-latest
-            python-version: 3.7
+        - os: windows-latest
+          python-version: 3.6
+        - os: windows-latest
+          python-version: 3.7
 
     runs-on: ${{ matrix.os }}
     continue-on-error: ${{ matrix.os != 'ubuntu-latest' }}
@@ -69,3 +69,8 @@ jobs:
 
     - name: Run the test suite
       run: make test
+
+    - name: Run pre commit
+      run: |
+        pip install pre-commit
+        SKIP=end-of-file-fixer,trailing-whitespace pre-commit run --all-files
