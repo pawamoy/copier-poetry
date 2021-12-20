@@ -1,8 +1,8 @@
-site_name: "Copier Poetry"
-site_description: "Copier template for Poetry projects."
-site_url: "https://pawamoy.github.io/copier-poetry"
-repo_url: "https://github.com/pawamoy/copier-poetry"
-repo_name: "pawamoy/copier-poetry"
+site_name: Copier Poetry
+site_description: Copier template for Poetry projects.
+site_url: https://pawamoy.github.io/copier-poetry
+repo_url: https://github.com/pawamoy/copier-poetry
+repo_name: pawamoy/copier-poetry
 
 nav:
 - Home:
@@ -38,4 +38,4 @@ markdown_extensions:
 - pymdownx.tabbed
 - pymdownx.tasklist
 - toc:
-    permalink: "¤"
+    permalink: ¤
