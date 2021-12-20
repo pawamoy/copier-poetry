@@ -61,4 +61,4 @@ def define_env(env):
     Arguments:
         env: An object used to add macros and filters to the environment.
     """
-    env.macro(get_credits_data, 'get_credits_data')
+    env.macro(get_credits_data, "get_credits_data")
