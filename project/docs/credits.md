@@ -4,7 +4,7 @@
 
 # Credits
 {% set data = get_credits_data() %}
-These projects were used to build `{{ data['project_name'] }}`. **Thank you!**
+These projects were used to build `{{ data.project_name }}`. **Thank you!**
 
 [`python`](https://www.python.org/) |
 [`poetry`](https://poetry.eustace.io/) |
