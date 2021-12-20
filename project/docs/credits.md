@@ -3,14 +3,15 @@
 -->
 
 # Credits
-These projects were used to build `{{ project_name }}`. **Thank you!**
+{% set data = get_credits_data() %}
+These projects were used to build `{{ data['project_name'] }}`. **Thank you!**
 
 [`python`](https://www.python.org/) |
 [`poetry`](https://poetry.eustace.io/) |
 [`copier-poetry`](https://github.com/pawamoy/copier-poetry)
 
 
-{% for var, title in ((direct_dependencies, 'Run dependencies'), (dev_dependencies, 'Development dependencies'), (indirect_dependencies, 'Indirect dependencies')) %}
+{% for var, title in ((data['direct_dependencies'], 'Run dependencies'), (data['dev_dependencies'], 'Development dependencies'), (data['indirect_dependencies'], 'Indirect dependencies')) %}
 {% if var %}
 ### {{title}}
 | Package | Description | Version | License |
