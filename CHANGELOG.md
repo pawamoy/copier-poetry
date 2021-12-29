@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.4.0](https://github.com/pawamoy/copier-poetry/releases/tag/0.4.0) - 2021-12-29
+
+<small>[Compare with 0.3.2](https://github.com/pawamoy/copier-poetry/compare/0.3.2...0.4.0)</small>
+
+### Features
+- Add TOML and YAML linters to pre-commit ([e2bc6a6](https://github.com/pawamoy/copier-poetry/commit/e2bc6a6b9eb0d96437d89b4b4a4abace26c2cc9f) by rachmadani haryono). Related issues/PRs: [#23](https://github.com/pawamoy/copier-poetry/issues/23)
+
+### Bug Fixes
+- Typo on copier answer file exclude ([f3c756d](https://github.com/pawamoy/copier-poetry/commit/f3c756d2eab4ae134c03cdabf55cbfce60992d06) by rachmadani haryono). Related issues/PRs: [#25](https://github.com/pawamoy/copier-poetry/issues/25)
+- Upgrade pydocstyle ([673020f](https://github.com/pawamoy/copier-poetry/commit/673020ff28b8dfb9c349788b17107e65334a1eb9) by Rachmadani Haryono).
+- Use force flag when delete file ([12320c6](https://github.com/pawamoy/copier-poetry/commit/12320c670cf5ced9d436cc9e18c78555aaffabfa) by Rachmadani Haryono).
+
+### Code Refactoring
+- Improve credits generation ([6b42eef](https://github.com/pawamoy/copier-poetry/commit/6b42eefeefa7bb8c6ac66106ac3d68cdb38f5be0) by rachmadani haryono). Related issues/PRs: [#22](https://github.com/pawamoy/copier-poetry/issues/22), [#24](https://github.com/pawamoy/copier-poetry/issues/24)
+- Remove dependencies upper bounds ([55c277d](https://github.com/pawamoy/copier-poetry/commit/55c277d4223671fc438e439e2505b00d9459ab2e) by rachmadani haryono). Related issues/PRs: [#19](https://github.com/pawamoy/copier-poetry/issues/19)
+
+
 ## [0.3.2](https://github.com/pawamoy/copier-poetry/releases/tag/0.3.2) - 2021-11-14
 
 <small>[Compare with 0.3.1](https://github.com/pawamoy/copier-poetry/compare/0.3.1...0.3.2)</small>
