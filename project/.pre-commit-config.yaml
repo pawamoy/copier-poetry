@@ -37,7 +37,7 @@ repos:
     args: [--autofix]
   - id: pretty-format-yaml
     args: [--autofix]
-    exclude: .copier-answer.yml
+    exclude: .copier-answers.yml
     # based on
     # https://gitlab.com/smop/pre-commit-hooks/-/blob/master/.pre-commit-hooks.yaml
 - repo: local
