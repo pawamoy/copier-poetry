@@ -14,13 +14,11 @@ BASIC_DUTIES = \
 	clean \
 	coverage \
 	docs \
-	{% if repository_provider == "github.com" %}
-	docs-deploy \
-	{% endif %}
 	docs-regen \
 	docs-serve \
 	format \
-	release
+	release \
+	{% if repository_provider == "github.com" %}docs-deploy \{% endif %}
 
 QUALITY_DUTIES = \
 	check \
