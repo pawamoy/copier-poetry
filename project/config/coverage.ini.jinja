@@ -1,20 +1,20 @@
 [coverage:paths]
 source =
-  src/[[ python_package_import_name ]]
-  */site-packages/[[ python_package_import_name ]]
+  src/{{ python_package_import_name }}
+  */site-packages/{{ python_package_import_name }}
 
 [coverage:run]
 branch = true
 source =
-  src/[[ python_package_import_name ]]
+  src/{{ python_package_import_name }}
   tests
 parallel = true
 
 [coverage:report]
 precision = 2
 omit =
-  src/[[ python_package_import_name ]]/__init__.py
-  src/[[ python_package_import_name ]]/__main__.py
+  src/{{ python_package_import_name }}/__init__.py
+  src/{{ python_package_import_name }}/__main__.py
   tests/*
 
 [coverage:html]

@@ -14,9 +14,9 @@ BASIC_DUTIES = \
 	clean \
 	coverage \
 	docs \
-	[%- if repository_provider == "github.com" %]
+	{% if repository_provider == "github.com" %]
 	docs-deploy \
-	[%- endif %]
+	{% endif %]
 	docs-regen \
 	docs-serve \
 	format \

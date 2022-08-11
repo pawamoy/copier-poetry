@@ -1,0 +1,335 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+
+# Make data base, printed on Thu Aug 11 10:06:58 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+TRAVIS_TOKEN = Wm3c_-lSl2bb8HniVviBbw
+# environment
+LC_CTYPE = UTF-8
+# environment
+GREP_COLOR = 37;45
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /Users/willian.vervalempaiva/projects/copier-poetry
+# makefile
+SHELL = /bin/sh
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# environment
+POETRY_PYPI_TOKEN_PYPI = AKCp5fUsTfu1dkzbFh91WGyvJ6JF5fVfcYiamDgSxbb4byT6kAeCEZxh8LQKXQksKwBgf1B1p
+# environment
+LESS_TERMCAP_se = [0m
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# environment
+VSCODE_CWD = /Users/willian.vervalempaiva/projects/copier-poetry
+# environment
+SYSTEM_VERSION_COMPAT = 1
+# environment
+LESS_TERMCAP_me = [0m
+# environment
+LESS_TERMCAP_mb = [01;31m
+# environment
+LSCOLORS = exfxcxdxbxGxDxabagacad
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+SPACESHIP_VERSION = 3.11.0
+# environment
+LaunchInstanceID = 57299528-F658-4745-B935-CF2E0E963253
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+PYENV_ROOT = /Users/willian.vervalempaiva/.pyenv
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# environment
+GRPC_PYTHON_BUILD_SYSTEM_OPENSSL = 1
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.ANb1yiHqe9/Listeners
+# automatic
+%F = $(notdir $%)
+# environment
+ARTIFACTORY_CONTEXT = https://artifactory.mpi-internal.com/artifactory
+# environment
+TTY = /dev/ttys001
+# environment
+VISUAL = nano
+# environment
+FIG_PID = 21337
+# environment
+PWD = /Users/willian.vervalempaiva/projects/copier-poetry
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+LESS_TERMCAP_ue = [0m
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+PYENV_SHELL = zsh
+# environment
+HOME = /Users/willian.vervalempaiva
+# default
+MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
+# environment
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/willian.vervalempaiva/Library/Application Support/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
+# environment
+LOGNAME = willian.vervalempaiva
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# automatic
++F = $(notdir $+)
+# environment
+GITHUB_SERVICE_TOKEN = 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
+# environment
+POETRY_HTTP_BASIC_PYPI_USERNAME = willian.vervalempaiva@adevinta.com
+# environment
+WORKON_HOME = /Users/willian.vervalempaiva/.virtualenvs
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+LESS_TERMCAP_md = [01;31m
+# environment
+XPC_FLAGS = 0x0
+# environment
+COLORTERM = truecolor
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+LC_TERMINAL = iTerm2
+# environment
+PATH = /Users/willian.vervalempaiva/.poetry/bin:/Users/willian.vervalempaiva/google-cloud-sdk/bin:/usr/local/opt/grep/libexec/gnubin:/Users/willian.vervalempaiva/.pyenv/bin:/Users/willian.vervalempaiva/.pyenv/shims:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/willian.vervalempaiva/.ebcli-virtual-env/executables:/Users/willian.vervalempaiva/.fig/bin:/Users/willian.vervalempaiva/.local/bin:/Users/willian.vervalempaiva/.emacs.d/bin
+# environment
+GRPC_PYTHON_BUILD_SYSTEM_ZLIB = 1
+# environment
+SHLVL = 3
+# environment
+FIG_TERM = 1
+# environment
+LESS_TERMCAP_so = [00;47;30m
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = willian.vervalempaiva
+# environment
+FIG_TERM_VERSION = 4.4.2
+# environment
+ARTIFACTORY_PWD = AKCp5fUsTfu1dkzbFh91WGyvJ6JF5fVfcYiamDgSxbb4byT6kAeCEZxh8LQKXQksKwBgf1B1p
+# default
+MAKECMDGOALS := all
+# environment
+TERM_SESSION_ID = w0t0p0:B9F7C2BF-6BA9-4655-89ED-17B5882A5B43
+# environment
+LESS = -g -i -M -R -S -w -X -z-4
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+FIG_INTEGRATION_VERSION = 8
+# default
+MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+# environment
+ARTIFACTORY_USER = willian.vervalempaiva@adevinta.com
+# environment
+GREP_COLORS = mt=37;45
+# environment
+TERM_PROGRAM = iTerm.app
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/wg/5mxx_s8d6wlfjfn_prhm1s800000gp/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/willian.vervalempaiva/Library/Application Support/Code/1.69.2-main.sock
+# environment
+MallocNanoZone = 0
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+TERM_PROGRAM_VERSION = 3.4.16
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.25905701.25905707.759FF676-23F4-4FCE-B5CE-607E4E92080F
+# environment
+LESS_TERMCAP_us = [01;32m
+# environment
+LC_TERMINAL_VERSION = 3.4.16
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+BROWSER = open
+# environment
+ITERM_SESSION_ID = w0t0p0:B9F7C2BF-6BA9-4655-89ED-17B5882A5B43
+# environment
+COLORFGBG = 15;0
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F6:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+ITERM_PROFILE = Default
+# environment
+POETRY_HTTP_BASIC_PYPI_PASSWORD = AKCp5fUsTfu1dkzbFh91WGyvJ6JF5fVfcYiamDgSxbb4byT6kAeCEZxh8LQKXQksKwBgf1B1p
+# environment
+EDITOR = nano
+# environment
+PAGER = less
+# environment
+LC_ALL = C
+# environment
+VIRTUAL_ENV_DISABLE_PROMPT = true
+# environment
+SECURITYSESSIONID = 186a3
+# environment
+SPACESHIP_ROOT = /Users/willian.vervalempaiva/.zprezto/contrib/contrib-prompt/external/spaceship
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
+MAKELEVEL := 0
+# makefile
+.DEFAULT_GOAL := clean
+# environment
+LANG = C
+# environment
+PYTHON_KEYRING_BACKEND = keyring.backends.macOS.Keyring
+# environment
+TERM = xterm-256color
+# environment
+VSCODE_PID = 43065
+# variable set hash-table stats:
+# Load=111/1024=11%, Rehash=0, Collisions=11/135=8%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 16777220, inode 26443074): 20 files, no impossibilities.
+
+# 20 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+all:
+#  Command-line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+update-deps:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 8):
+	@./update-deps.sh
+	
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-11 10:04:57
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+test: clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 5):
+	@./runtests.sh
+	
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 2):
+	@rm -rf tests/tmp
+	
+
+changelog:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 11):
+ 
+make: *** No rule to make target `all'.  Stop.
+
+	@git-changelog . -s angular -t keepachangelog -o CHANGELOG.md
+	
+
+# files hash-table stats:
+# Load=8/1024=1%, Rehash=0, Collisions=0/21=0%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Thu Aug 11 10:06:58 2022
+
+ 

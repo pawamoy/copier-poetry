@@ -3,16 +3,16 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "[[ python_package_distribution_name ]]"
+name = "{{ python_package_distribution_name }}"
 version = "0.1.0"
-description = "[[ project_description ]]"
-authors = ["[[ author_fullname ]] <[[ author_email ]]>"]
-license = "[[ copyright_license ]]"
+description = "{{ project_description }}"
+authors = ["{{ author_fullname }} <{{ author_email }}>"]
+license = "{{ copyright_license }}"
 readme = "README.md"
-repository = "https://[[ repository_provider ]]/[[ repository_namespace ]]/[[ repository_name ]]"
-homepage = "https://[[ repository_provider ]]/[[ repository_namespace ]]/[[ repository_name ]]"
+repository = "https://{{ repository_provider }}/{{ repository_namespace }}/{{ repository_name }}"
+homepage = "https://{{ repository_provider }}/{{ repository_namespace }}/{{ repository_name }}"
 keywords = []
-packages = [ { include = "[[ python_package_import_name ]]", from = "src" } ]
+packages = [ { include = "{{ python_package_import_name }}", from = "src" } ]
 
 [tool.poetry.dependencies]
 python = ">=3.6.2,<4.0"
@@ -62,7 +62,7 @@ mkdocs-material = ">=6.2.7"
 mkdocstrings = ">=0.16.2"
 
 [tool.poetry.scripts]
-[[ python_package_command_line_name ]] = "[[ python_package_import_name ]].cli:main"
+{{ python_package_command_line_name }} = "{{ python_package_import_name }}.cli:main"
 
 [tool.black]
 line-length = 120
@@ -75,5 +75,5 @@ multi_line_output = 3
 force_single_line = false
 balanced_wrapping = true
 default_section = "THIRDPARTY"
-known_first_party = "[[ python_package_import_name ]]"
+known_first_party = "{{ python_package_import_name }}"
 include_trailing_comma = true
