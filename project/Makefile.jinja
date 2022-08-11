@@ -18,7 +18,7 @@ BASIC_DUTIES = \
 	docs-serve \
 	format \
 	release \
-	{% if repository_provider == "github.com" %}docs-deploy \{% endif %}
+	{% if repository_provider == "github.com" %}docs-deploy{% endif %}
 
 QUALITY_DUTIES = \
 	check \
