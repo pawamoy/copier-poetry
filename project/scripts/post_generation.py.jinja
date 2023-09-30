@@ -22,17 +22,11 @@ def rmdir(path):
 
 
 def clean_up_providers():
-    provider = "[[ repository_provider ]]"
+    provider = "{{ repository_provider }}"
     if provider == "github.com":
         rm(".gitlab-ci.yml")
     elif provider == "gitlab.com":
         rmdir(".github")
-
-
-def clean_up_precommit():
-    use_precommit = [[ use_precommit ]]
-    if not use_precommit:
-        rm(".pre-commit-config.yaml")
 
 
 def delete_myself():
@@ -41,7 +35,6 @@ def delete_myself():
 
 if __name__ == "__main__":
     clean_up_providers()
-    clean_up_precommit()
     delete_myself()
 
     print("Project sucessfully generated!")

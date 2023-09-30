@@ -23,7 +23,7 @@ echo "///////////////////////////////////////////"
 echo "             GENERATING PROJECT"
 echo "///////////////////////////////////////////"
 echo
-copier -f "${template}" "${output}" \
+copier copy -f --trust "${template}" "${output}" \
   -d project_name="Pawamoy Testing" \
   -d project_description='Testing this great template' \
   -d author_fullname="Timothee Mazzucotelli" \
@@ -74,7 +74,7 @@ echo "///////////////////////////////////////////"
 echo "             UPDATING PROJECT"
 echo "///////////////////////////////////////////"
 echo
-copier -f update
+copier update -f --trust
 
 echo
 echo "///////////////////////////////////////////"

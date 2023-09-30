@@ -33,10 +33,10 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: 3.8
 
@@ -44,7 +44,7 @@ jobs:
       run: pip install poetry
 
     - name: Set up the cache
-      uses: actions/cache@v1
+      uses: actions/cache@v3
       with:
         path: .poetry_cache
         key: quality-poetry-cache
@@ -71,16 +71,16 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        python-version: [3.6, 3.7, 3.8, 3.9, 3.10.0]
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
     runs-on: ${{ matrix.os }}
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
 
@@ -88,7 +88,7 @@ jobs:
       run: pip install poetry
 
     - name: Set up the cache
-      uses: actions/cache@v1
+      uses: actions/cache@v3
       with:
         path: .poetry_cache
         key: tests-poetry-cache-${{ matrix.os }}-py${{ matrix.python-version }}

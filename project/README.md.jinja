@@ -1,52 +1,28 @@
-# [[ project_name ]]
+# {{ project_name }}
 
-[% if repository_provider == "gitlab.com" -%]
-[![pipeline status](https://gitlab.com/[[ repository_namespace ]]/[[ repository_name ]]/badges/main/pipeline.svg)](https://gitlab.com/[[ repository_namespace ]]/[[ repository_name ]]/pipelines)
-[![coverage report](https://gitlab.com/[[ repository_namespace ]]/[[ repository_name ]]/badges/main/coverage.svg)](https://gitlab.com/[[ repository_namespace ]]/[[ repository_name ]]/commits/master)
-[% elif repository_provider == "github.com" -%]
-[![ci](https://github.com/[[ repository_namespace ]]/[[ repository_name ]]/workflows/ci/badge.svg)](https://github.com/[[ repository_namespace ]]/[[ repository_name ]]/actions?query=workflow%3Aci)
-[% endif -%]
-[![documentation](https://img.shields.io/badge/docs-mkdocs%20material-blue.svg?style=flat)](https://[[ repository_namespace ]].[[ repository_provider[:-4] ]].io/[[ repository_name ]]/)
-[![pypi version](https://img.shields.io/pypi/v/[[ repository_name ]].svg)](https://pypi.org/project/[[ repository_name ]]/)
-[![gitter](https://badges.gitter.im/join%20chat.svg)](https://gitter.im/[[ repository_name ]]/community)
+{% if repository_provider == "gitlab.com" -%}
+[![pipeline status](https://gitlab.com/{{ repository_namespace }}/{{ repository_name }}/badges/main/pipeline.svg)](https://gitlab.com/{{ repository_namespace }}/{{ repository_name }}/pipelines)
+[![coverage report](https://gitlab.com/{{ repository_namespace }}/{{ repository_name }}/badges/main/coverage.svg)](https://gitlab.com/{{ repository_namespace }}/{{ repository_name }}/commits/master)
+{% elif repository_provider == "github.com" -%}
+[![ci](https://github.com/{{ repository_namespace }}/{{ repository_name }}/workflows/ci/badge.svg)](https://github.com/{{ repository_namespace }}/{{ repository_name }}/actions?query=workflow%3Aci)
+{% endif -%}
+[![documentation](https://img.shields.io/badge/docs-mkdocs%20material-blue.svg?style=flat)](https://{{ repository_namespace }}.{{ repository_provider[:-4] }}.io/{{ repository_name }}/)
+[![pypi version](https://img.shields.io/pypi/v/{{ repository_name }}.svg)](https://pypi.org/project/{{ repository_name }}/)
+[![gitter](https://badges.gitter.im/join%20chat.svg)](https://gitter.im/{{ repository_name }}/community)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-[[ project_description ]]
-
-## Requirements
-
-[[ project_name ]] requires Python 3.6 or above.
-
-<details>
-<summary>To install Python 3.6, I recommend using <a href="https://github.com/pyenv/pyenv"><code>pyenv</code></a>.</summary>
-
-```bash
-# install pyenv
-git clone https://github.com/pyenv/pyenv ~/.pyenv
-
-# setup pyenv (you should also put these three lines in .bashrc or similar)
-export PATH="${HOME}/.pyenv/bin:${PATH}"
-export PYENV_ROOT="${HOME}/.pyenv"
-eval "$(pyenv init -)"
-
-# install Python 3.6
-pyenv install 3.6.12
-
-# make it available globally
-pyenv global system 3.6.12
-```
-</details>
+{{ project_description }}
 
 ## Installation
 
 With `pip`:
 ```bash
-python3.6 -m pip install [[ python_package_distribution_name ]]
+python3.8 -m pip install {{ python_package_distribution_name }}
 ```
 
 With [`pipx`](https://github.com/pipxproject/pipx):
 ```bash
-python3.6 -m pip install --user pipx
+python3.8 -m pip install --user pipx
 
-pipx install --python python3.6 [[ python_package_distribution_name ]]
+pipx install --python python3.8 {{ python_package_distribution_name }}
 ```

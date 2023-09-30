@@ -1,9 +1,9 @@
-site_name: "[[ project_name ]]"
-site_description: "[[ project_description ]]"
-site_url: "https://[[ repository_namespace ]].[[ repository_provider.rsplit('.', 1)[0] ]].io/[[ repository_name ]]"
-repo_url: "https://[[ repository_provider ]]/[[ repository_namespace ]]/[[ repository_name ]]"
-repo_name: "[[ repository_namespace ]]/[[ repository_name ]]"
-site_dir: "[% if repository_provider == 'gitlab.com' %]public[% elif repository_provider == 'github.com' %]site[% endif %]"
+site_name: "{{ project_name }}"
+site_description: "{{ project_description }}"
+site_url: "https://{{ repository_namespace }}.{{ repository_provider.rsplit('.', 1)[0] }}.io/{{ repository_name }}"
+repo_url: "https://{{ repository_provider }}/{{ repository_namespace }}/{{ repository_name }}"
+repo_name: "{{ repository_namespace }}/{{ repository_name }}"
+site_dir: "{% if repository_provider == 'gitlab.com' %}public{% elif repository_provider == 'github.com' %}site{% endif %}"
 
 nav:
 - Home:
@@ -48,6 +48,6 @@ plugins:
     html_report_dir: build/coverage
 - mkdocstrings:
     watch:
-    - src/[[ python_package_import_name ]]
+    - src/{{ python_package_import_name }}
 - macros:
     module_name: docs/macros

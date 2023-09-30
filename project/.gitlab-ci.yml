@@ -23,7 +23,7 @@ stages:
 
 .quality-template: &quality
   <<: *install-deps
-  image: python:3.6
+  image: python:3.8
   stage: quality
 
 check-docs:
@@ -52,14 +52,6 @@ check-dependencies:
     paths:
     - .coverage-*
 
-python3.6:
-  <<: *test
-  image: python:3.6
-
-python3.7:
-  <<: *test
-  image: python:3.7
-
 python3.8:
   <<: *test
   image: python:3.8
@@ -70,18 +62,26 @@ python3.9:
 
 python3.10:
   <<: *test
-  image: python:3.10.0
+  image: python:3.10
+
+python3.11:
+  <<: *test
+  image: python:3.11
+
+python3.12:
+  <<: *test
+  image: python:3.12
 
 pages:
   stage: deploy
   <<: *install-deps
-  image: python:3.6
+  image: python:3.8
   dependencies:
-  - python3.6
-  - python3.7
   - python3.8
   - python3.9
   - python3.10
+  - python3.11
+  - python3.12
   script:
   - poetry run duty coverage
   - poetry run duty docs

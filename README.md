@@ -28,7 +28,7 @@ but with [PDM](https://github.com/pdm-project/pdm) instead of Poetry.
   with [coverage](https://github.com/nedbat/coveragepy) support
 - Cross-platform tasks with [duty](https://github.com/pawamoy/duty)
 - Support for GitHub workflow and Gitlab CI
-- Python 3.6 or above
+- Python 3.8 or above
 - Auto-generated `CHANGELOG.md` from git commits (using Angular message style)
 - Auto-generated `CREDITS.md` from Python dependencies
 - All licenses from [choosealicense.com](https://choosealicense.com/appendix/)

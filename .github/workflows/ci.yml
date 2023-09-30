@@ -27,19 +27,14 @@ jobs:
       max-parallel: 6
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        python-version: [3.6, 3.7, 3.8, 3.9]
-        exclude:
-        - os: windows-latest
-          python-version: 3.6
-        - os: windows-latest
-          python-version: 3.7
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
     runs-on: ${{ matrix.os }}
     continue-on-error: ${{ matrix.os != 'ubuntu-latest' }}
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Set up git
       run: |
@@ -47,12 +42,12 @@ jobs:
         git config --global user.name "Timothée Mazzucotelli"
 
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
 
     - name: Set up the cache
-      uses: actions/cache@v1
+      uses: actions/cache@v3
       env:
         cache-name: cache-python-packages
       with:
@@ -69,8 +64,3 @@ jobs:
 
     - name: Run the test suite
       run: make test
-
-    - name: Run pre commit
-      run: |
-        pip install pre-commit
-        SKIP=end-of-file-fixer,trailing-whitespace pre-commit run --all-files

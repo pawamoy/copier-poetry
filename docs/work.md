@@ -58,7 +58,7 @@ Example:
 
 ```toml
 [tool.poetry.dependencies]
-python = "^3.6"
+python = ">=3.8"
 fastapi = "<1.0"
 importlib-metadata = "^2.0.0"
 ```

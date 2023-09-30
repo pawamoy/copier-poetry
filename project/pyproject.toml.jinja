@@ -3,19 +3,19 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "[[ python_package_distribution_name ]]"
+name = "{{ python_package_distribution_name }}"
 version = "0.1.0"
-description = "[[ project_description ]]"
-authors = ["[[ author_fullname ]] <[[ author_email ]]>"]
-license = "[[ copyright_license ]]"
+description = "{{ project_description }}"
+authors = ["{{ author_fullname }} <{{ author_email }}>"]
+license = "{{ copyright_license }}"
 readme = "README.md"
-repository = "https://[[ repository_provider ]]/[[ repository_namespace ]]/[[ repository_name ]]"
-homepage = "https://[[ repository_provider ]]/[[ repository_namespace ]]/[[ repository_name ]]"
+repository = "https://{{ repository_provider }}/{{ repository_namespace }}/{{ repository_name }}"
+homepage = "https://{{ repository_provider }}/{{ repository_namespace }}/{{ repository_name }}"
 keywords = []
-packages = [ { include = "[[ python_package_import_name ]]", from = "src" } ]
+packages = [ { include = "{{ python_package_import_name }}", from = "src" } ]
 
 [tool.poetry.dependencies]
-python = ">=3.6.2,<4.0"
+python = ">=3.8.2"
 
 [tool.poetry.dev-dependencies]
 # formatting, quality, tests
@@ -38,7 +38,6 @@ jinja2-cli = ">=0.7.0"
 toml = ">=0.10.2"
 
 # flake8 plugins
-darglint = ">=1.5.8"
 flake8 = ">=3.7.0"
 flake8-bandit = ">=2.1.2"
 flake8-black = ">=0.2.1"
@@ -46,13 +45,11 @@ flake8-bugbear = ">=20.11.1"
 flake8-builtins = ">=1.5.3"
 flake8-comprehensions = ">=3.3.1"
 flake8-docstrings = ">=1.5.0"
-flake8-pytest-style = ">=1.3.0"
 flake8-string-format = ">=0.3.0"
 flake8-tidy-imports = ">=4.2.1"
 flake8-variables-names = ">=0.0.4"
 pep8-naming = ">=0.11.1"
 pydocstyle = ">=6.1.1"
-wps-light = ">=0.15.2"
 
 # docs
 mkdocs = ">=1.2.2"
@@ -62,7 +59,7 @@ mkdocs-material = ">=6.2.7"
 mkdocstrings = ">=0.16.2"
 
 [tool.poetry.scripts]
-[[ python_package_command_line_name ]] = "[[ python_package_import_name ]].cli:main"
+{{ python_package_command_line_name }} = "{{ python_package_import_name }}.cli:main"
 
 [tool.black]
 line-length = 120
@@ -75,5 +72,5 @@ multi_line_output = 3
 force_single_line = false
 balanced_wrapping = true
 default_section = "THIRDPARTY"
-known_first_party = "[[ python_package_import_name ]]"
+known_first_party = "{{ python_package_import_name }}"
 include_trailing_comma = true
