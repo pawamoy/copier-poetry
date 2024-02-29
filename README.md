@@ -8,9 +8,10 @@ so it is maintained by the community. I will still review and merge PRs though.
 I can add you as a contributor if you wish to maintain the template
 for the community (for personal needs, please fork instead).
 
-Also checkout [copier-pdm](https://github.com/pawamoy/copier-pdm),
-which is the same template
-but with [PDM](https://github.com/pdm-project/pdm) instead of Poetry.
+Similar templates:
+
+- [copier-pdm](https://github.com/pawamoy/copier-pdm), with [PDM](https://github.com/pdm-project/pdm)
+- [copier-uv](https:///github.com/pawamoy/copier-uv), with [uv](https://github.com/astral-sh/uv)
 
 ## Features
 
