@@ -3,10 +3,11 @@
 [Copier](https://github.com/copier-org/copier) template
 for Python projects managed by [Poetry](https://github.com/python-poetry/poetry).
 
-:warning: I personally don't use this template anymore,
-so it is maintained by the community. I will still review and merge PRs though.
-I can add you as a contributor if you wish to maintain the template
-for the community (for personal needs, please fork instead).
+> [!WARNING]
+> I personally don't use this template anymore,
+> so it is maintained by the community. I will still review and merge PRs though.
+> I can add you as a contributor if you wish to maintain the template
+> for the community (for personal needs, please fork instead).
 
 Similar templates:
 
