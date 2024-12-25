@@ -8,4 +8,4 @@ update-deps:
 	@./update-deps.sh
 
 changelog:
-	@git-changelog . -s angular -t keepachangelog -o CHANGELOG.md
+	@git-changelog . -c angular -t keepachangelog -io CHANGELOG.md
